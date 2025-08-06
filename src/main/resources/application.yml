@@ -1,0 +1,41 @@
+#spring:
+#  ai:
+#    mcp:
+#      server:
+#
+#        name: demomcpserver
+#  main:
+#    banner-mode: off
+#    web-application-type: none
+#
+#logging:
+#  pattern:
+#    console: none
+
+spring:
+  main:
+      banner-mode: off
+      web-application-type: none
+  ai:
+    mcp:
+      server:
+        enabled: true
+        stdio: true
+        name: demoagent
+        version: 1.0.0
+        instructions: "This server provides custom tools "
+        type: SYNC
+        capabilities:
+          tool: true
+          resource: false
+          prompt: false
+          completion: false
+        change-notifications:
+          resource: false
+          prompt: false
+          tool: true
+        timeout: 30s
+logging:
+  level:
+    root: OFF
+    org.springframework.ai.mcp: DEBUG
