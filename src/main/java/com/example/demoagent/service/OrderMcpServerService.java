@@ -29,4 +29,10 @@ public class OrderMcpServerService {
             default -> "Order not found";
         };
     }
+
+    @Tool(description = "Insert an order into the database.")
+    public String insertOrder(@ToolParam(description = "orderid") String orderid, @ToolParam(description = "orderdescription") String orderdescription) {
+        // Simulate inserting order into a database
+        return "Order inserted: " + orderid + " " + orderdescription;
+    }
 }
