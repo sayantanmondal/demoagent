@@ -35,7 +35,12 @@ spring:
           prompt: false
           tool: true
         timeout: 30s
+#logging:
+#  level:
+#    root: OFF
+#    org.springframework.ai.mcp: DEBUG
 logging:
-  level:
-    root: OFF
-    org.springframework.ai.mcp: DEBUG
+  pattern:
+    console: ""          # Empty pattern → no console logs
+  file:
+    name: logs/demoagent.log
